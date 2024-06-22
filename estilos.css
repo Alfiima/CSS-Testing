@@ -7,6 +7,7 @@
 body {
     display: grid;
     min-height: 100vh;
+    min-width: 100vw;
     place-items: center;
     line-height: 1.6;
     background: #ffffff;
@@ -79,7 +80,8 @@ a:focus-visible {
 
 .card {
     color: white;
-    background-image: url(IMG/yuki.JPG);
+    background-image: url(IMG/hozier1.jpg);
+    background-position: center;
     background-size: cover;
     padding: 10rem 0 0;
     max-width: 35ch;
@@ -122,13 +124,20 @@ a:focus-visible {
     transition: transform 500ms ease;
 }
 
-.card:hover .card-title::after,
-.card:focus-within .card-title::after {
+.card:hover .card-title::after{
     transform: scaleX(1);
 }
 
 .card-body {
     color: rgb(255 255 255 / 0.85);
+    position: relative;
+    max-width: max-content;
+    padding: 0.1em 1em;
+}
+
+.card-body:hover {
+    cursor: pointer;
+    color: greenyellow;
 }
 
 @media (hover) {
