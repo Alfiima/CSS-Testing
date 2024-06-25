@@ -1,3 +1,12 @@
+:root {
+    --level-one: translateZ(3rem);
+    --level-two: translateZ(6rem);
+    --level-three: translateZ(9rem);
+
+    --fw-normal: 400;
+    --fw-bold: 700;
+}
+
 *,
 *::before,
 *::after {
@@ -228,32 +237,60 @@ a:focus-visible {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 2em;
+    padding: 15em 3em;
     transform-style: preserve-3d;
     backface-visibility: hidden;
+    display: grid;
+    align-content: center;
 }
 
 .card-front {
-    background: lightgreen;
+    /* background: rgb(112, 103, 117); */
+    background-image: url(IMG/nick-karvounis-AADGRFMr-_I-unsplash.jpg);
+    background-size: cover;
+    background-blend-mode: lighten;
+    color: rgb(194, 190, 199);
+}
+
+.card-front::before {
+    content: '';
+    position: absolute;
+    --spacer: 1em;
+    top: var(--spacer);
+    bottom: var(--spacer);
+    left: var(--spacer);
+    right: var(--spacer);
+    border: 3px solid currentColor;
+    transform: var(--level-one);
 }
 
 .card-title-f {
-    font-size: 3rem;
-    transform: translateZ(6rem);
     margin: 0; 
+    font-size: 3.5rem;
+    transform: var(--level-three);
+    order: 2;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px black;
 }
 
 .card-subtitle-flip {
     margin: 0;
-    transform: translateZ(4rem);
+    transform: var(--level-two);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: .75rem;
+    font-weight: var(--fw-bold);
+    opacity: .7; 
 }
 
 .card-body-flip {
     margin: 0;
-    transform: translateZ(3rem);
+    transform: var(--level-two);
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
 }
 
 .card-back {
     transform: rotateY(.5turn);
-    background: lightblue;
+    background: rgb(84, 98, 102);
 }
