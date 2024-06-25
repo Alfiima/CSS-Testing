@@ -207,10 +207,6 @@ a:focus-visible {
     width: 400px;
 }
 
-.card-flip:hover .card-content-flip {
-    transform: rotateY(.25turn);
-}
-
 .card-content-flip {
     text-align: center;
     position: relative;
@@ -220,16 +216,44 @@ a:focus-visible {
     transform-style: preserve-3d;
 }
 
+.card-flip:hover .card-content-flip {
+    transform: rotateY(.5turn);
+}
+
 .card-front,
 .card-back {
     position: absolute;
+    margin: 0;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    padding: 2em;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 .card-front {
-    background: red;
-    transform: rotateY(.25turn);
+    background: lightgreen;
+}
+
+.card-title-f {
+    font-size: 3rem;
+    transform: translateZ(6rem);
+    margin: 0; 
+}
+
+.card-subtitle-flip {
+    margin: 0;
+    transform: translateZ(4rem);
+}
+
+.card-body-flip {
+    margin: 0;
+    transform: translateZ(3rem);
+}
+
+.card-back {
+    transform: rotateY(.5turn);
+    background: lightblue;
 }
